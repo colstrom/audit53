@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'audit53'
+require 'terminal-announce'
+
+abort 'Syntax: route53-audit <domain>' if ARGV.empty?
+
+zone_id = Audit53::Route53.zone_id domain: ARGV.first
+records = Audit53::Route53.ips zone_id: zone_id
+instances = Audit53::EC2.ips
+
+puts "#{records.length} DNS Records <-> #{instances.length} EC2 Instances"
+
+longest = records.values.max_by(&:length).length
+records.each do |ip, name|
+  if instances[ip]
+    Announce.success "#{name.ljust longest} #{ip.ljust 16} #{instances[ip]}"
+  else
+    Announce.warning "#{name.ljust longest} #{ip.ljust 16}"
+  end
+end
