@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "audit53"
   gem.homepage = "http://github.com/colstrom/audit53"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{a commandline tool to find stale DNS records.}
+  gem.description = %Q{audit53 gathers a list of IPs for all records in a zone, and warns if any resolve to an IP not associated with an EC2 instance.}
   gem.email = "chris@olstrom.com"
   gem.authors = ["Chris Olstrom"]
   gem.files         = `git ls-files`.split("\n")
