@@ -3,6 +3,7 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gem 'aws-sdk', '~> 2.1.0'
 gem 'terminal-announce', '~> 1.0.0'
 
 # Add dependencies to develop your gem here.
