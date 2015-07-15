@@ -1,9 +1,15 @@
-= audit53
+# audit53
 
-Description goes here.
+audit53 is a commandline tool to find stale DNS records.
 
-== Contributing to audit53
- 
+Description
+-----------
+
+`audit53` gathers a list of IPs for all records in a zone, and warns if any resolve to an IP not associated with an EC2 instance.
+
+Contributing to audit53
+----------------------
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
